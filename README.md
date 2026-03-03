@@ -1,16 +1,23 @@
 # Visual Servoing MPC for Autonomous UAV Pipeline Inspection in PX4 SITL simulation
 
-> This is a quadrotor trajectory tracking control project based on a Model Predictive Control (MPC) framework, with disturbance rejection. It targets PX4 SITL simulation, but can be easily ported to real quadrotor platforms—especially when the flight controller is PX4. This project has been tested on Ubuntu20.04+ROS Noetic.
+[![ubuntu](https://img.shields.io/badge/ubuntu-20.04-orange?logo=ubuntu)](https://releases.ubuntu.com/focal/)
+![ROS](https://img.shields.io/badge/ROS-noetic-blue?&logo=ROS)
+![PX4](https://img.shields.io/badge/px4%20firmware-1.14.x-blue.svg)
+![gazebo](https://img.shields.io/badge/gazebo%20classic-11.x.x-orange)
+[![eigen](https://img.shields.io/badge/eigen-3.4.x-green)](https://libeigen.gitlab.io/)
+![c++](https://img.shields.io/badge/C++11-blue)
+
+## Introduction
 
 ## Reference code
-The code is based on the open-source project https://github.com/uzh-rpg/rpg_mpc?tab=readme-ov-file
+The code is based on the open-source projects https://github.com/uzh-rpg/rpg_mpc?tab=readme-ov-file and https://github.com/EPVelasco/VisualServoing_NMPC.
 
 ## Install dependencies
 git
 
 MPC tool: ACADO toolkit is used, with qpoases as the solver. Installation reference: https://acado.github.io/install_linux.html
 
-Eigen: required for matrix operations, version 3.4 or above. Installation reference: https://eigen.tuxfamily.org/index.php?title=Main_Page
+Eigen: required for matrix operations, version 3.4.x. Installation reference: https://eigen.tuxfamily.org/index.php?title=Main_Page
 
 PX4 firmware: it is recommended to use version 1.14.4: https://github.com/PX4/PX4-Autopilot/tree/v1.14.4
 
