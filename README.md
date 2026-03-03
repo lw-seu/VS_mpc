@@ -28,15 +28,74 @@ The code follows a bottom-to-top layered structure:
 
 `mpc_controller`: generates the underlying ACADO solver code
 
-`mpc_wrapper`: calls ACADO functions and wraps them as a low-level wrapper; it should not need changes (there shouldn’t be any bugs, right?). The related class is `MpcWrapper`
+`mpc_wrapper`: calls ACADO functions and wraps them as a low-level wrapper; it should not need changes. The related class is `MpcWrapper`
 
 `mpc_ros_application`: a middle layer created for ROS-based implementation. The related class `MpcRosApplication` is a base class and cannot be instantiated; this class creates an instance of `MpcWrapper`
 
-`mpc_tracking`: the actual application layer; most modifications should be made here. The related class `TrackingMpc` inherits from `MpcRosApplication`. To create new ROS-based code, simply add a new `.cpp` file and implement a subclass inheriting from `MpcRosApplication`; nothing else needs to be changed
+`pipeline_inspection`: the actual application layer. The related class `PipelineInspection` inherits from `MpcRosApplication`. 
 
 `px4_interface`: PX4 interface layer, referring to the official code https://docs.px4.io/v1.14/en/ros/ , the related class is `OffboardMode`. If you create a new application-layer class, you need to modify it in the `OffboardMode` class
 
 `tracking_node`: main function entry
+## Preparation Before Running
+
+1. Copy the required Gazebo resources
+
+   * Place the `pipeline.world` file (located in the `gazebo/world` directory of this source code) into:
+
+     ```
+     ~/.gazebo/worlds
+     ```
+
+   * Place the `gas_pipeline` folder (located in the `gazebo/model` directory of this source code) into:
+
+     ```
+     ~/.gazebo/models
+     ```
+
+   These directories should exist after installing Gazebo. If they do not exist, please create them manually.
+
+
+2. Add a new PX4 launch file
+
+   * Navigate to the `launch` directory inside the PX4 source code .
+
+   * Create a new file named:
+
+     ```
+     vsmpc_mavros_sitl.launch
+     ```
+
+   * Copy the contents of `mavros_posix_sitl.launch` into the newly created file.
+
+   * Modify the file according to this project’s configuration.
+
+
+3. Configure environment variables
+
+   Add the following lines to your `~/.bashrc` file:
+
+   ```bash
+   source ~/ACADOtoolkit/build/acado_env.sh
+
+   source ~/PX4-Autopilot/Tools/simulation/gazebo-classic/setup_gazebo.bash \
+       ~/PX4-Autopilot \
+       ~/PX4-Autopilot/build/px4_sitl_default
+
+   export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot
+   export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic
+
+   export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models
+   export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/.gazebo/models
+   ```
+
+   After editing the file, apply the changes by running:
+
+   ```bash
+   source ~/.bashrc
+   ```
+
+
 
 ## Running steps
 
@@ -49,7 +108,7 @@ The code follows a bottom-to-top layered structure:
 
 2. Build:
    ```bash
-   catkin build quadrotor_mpc
+   catkin build visual_servo_mpc
    ```
 
 3. Launch the PX4 node:
