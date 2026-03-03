@@ -58,7 +58,7 @@ The code follows a bottom-to-top layered structure:
 
 2. Add a new PX4 launch file
 
-   * Navigate to the `launch` directory inside the PX4 source code .
+   * Navigate to the `launch` directory inside the PX4 source code `PX4-Autopilot`.
 
    * Create a new file named:
 
