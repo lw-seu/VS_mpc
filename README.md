@@ -1,4 +1,4 @@
-# Visual Servoing MPC for Autonomous UAV Pipeline Inspection in Complex Terrains in PX4 SITL simulation
+# Visual Servoing MPC for Autonomous UAV Pipeline Inspection in PX4 SITL simulation
 
 > This is a quadrotor trajectory tracking control project based on a Model Predictive Control (MPC) framework, with disturbance rejection. It targets PX4 SITL simulation, but can be easily ported to real quadrotor platforms—especially when the flight controller is PX4. This project has been tested on Ubuntu20.04+ROS Noetic.
 
