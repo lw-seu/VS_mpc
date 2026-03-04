@@ -9,6 +9,13 @@
 
 ## Introduction
 
+
+
+![vs_mpc_x8](https://github.com/user-attachments/assets/c76c8bb7-5e42-48e4-a017-b491f41316b3)
+
+
+
+
 ## Reference code
 The code is based on the open-source projects https://github.com/uzh-rpg/rpg_mpc?tab=readme-ov-file and https://github.com/EPVelasco/VisualServoing_NMPC.
 
