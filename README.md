@@ -102,7 +102,7 @@ The code follows a bottom-to-top layered structure:
 1. Clone the project repository into the workspace:
    ```bash
    mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
-   git clone https://github.com/lw-seu/quadrotor_mpc.git
+   git clone https://github.com/lw-seu/VS_mpc.git
    cd ~/catkin_ws
    ```
 
@@ -113,7 +113,7 @@ The code follows a bottom-to-top layered structure:
 
 3. Launch the PX4 node:
    ```bash
-   roslaunch px4 mavros_posix_sitl.launch
+   roslaunch px4 vsmpc_mavros_sitl.launch
    ```
    If it starts successfully, you will see Gazebo open and load the quadrotor correctly, and the terminal will display Ready to takeoff
 
