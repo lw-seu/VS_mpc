@@ -111,20 +111,21 @@ The code follows a bottom-to-top layered structure:
    catkin build visual_servo_mpc
    ```
 
-3. Launch the PX4 node:
+3. Start the control algorithm node:
+   ```bash
+   rosrun quadrotor_mpc inspection_node
+   ```
+   
+4. Open another terminal and launch the PX4 node:
    ```bash
    roslaunch px4 vsmpc_mavros_sitl.launch
    ```
-   If it starts successfully, you will see Gazebo open and load the quadrotor correctly, and the terminal will display Ready to takeoff
+   If it starts successfully, you will see Gazebo open and load the quadrotor and the pipeline model correctly.
 
    PS: On the first launch of the PX4 node, open the ground station `QGroundControl` and modify the parameter `THR_MDL_FAC` (0.8–1.0 should work) to make the thrust mapping closer to reality (see the Thrust Curve section in the official documentation https://docs.px4.io/v1.14/en/config_mc/pid_tuning_guide_multicopter.html). Later, if you change the maximum thrust constraint, it’s best to tune this parameter again
 
    <img width="583" height="107" alt="5215d4c4bb79865c448269a138b15031" src="https://github.com/user-attachments/assets/5ef3dc1a-75d9-41d6-b94c-fb1b0f847bce" />
 
-5. Open another terminal and start the control algorithm node:
-   ```bash
-   rosrun quadrotor_mpc tracking_mpc
-   ```
-   The quadrotor flies three laps along a lemniscate trajectory, indicating successful execution
+If the simulation runs successfully, the UAV will autonomously fly along the pipeline in Gazebo, and a `result` window will appear showing the real-time image detection output.
 
    
