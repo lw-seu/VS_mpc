@@ -8,7 +8,7 @@
 ![c++](https://img.shields.io/badge/C++11-blue)
 
 ## Introduction
-
+This project uses an autonomous quadrotor pipeline inspection framework based on image-based visual servoing model predictive control (VMPC) for 3D inspection scenarios.  To enhance robustness under low-rate visual measurements and environmental uncertainties, an extended-state Kalman filtering scheme with image feature prediction (ESKF-PRE) is developed,and the estimated lumped disturbances are incorporated into the VMPC prediction model, resulting in the proposed ESKF-PRE-VMPC framework. The detail algorithm can be found at 
 
 
 ![vs_mpc_x8](https://github.com/user-attachments/assets/c76c8bb7-5e42-48e4-a017-b491f41316b3)
