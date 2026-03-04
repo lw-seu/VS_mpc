@@ -118,7 +118,7 @@ The code follows a bottom-to-top layered structure:
 
 3. Start the control algorithm node:
    ```bash
-   rosrun quadrotor_mpc inspection_node
+   rosrun quadrotor_mpc inspection_mpc
    ```
    
 4. Open another terminal and launch the PX4 node:
