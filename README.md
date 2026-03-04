@@ -68,7 +68,12 @@ The code follows a bottom-to-top layered structure:
 
    * Copy the contents of `mavros_posix_sitl.launch` into the newly created file.
 
-   * Modify the file according to this project’s configuration.
+   * Modify the file as follows:
+     <img width="1117" height="51" alt="图片" src="https://github.com/user-attachments/assets/94b96223-9c48-4843-8192-8bda3b2591e3" />
+     ⬇⬇⬇⬇⬇⬇
+     <img width="1150" height="78" alt="图片" src="https://github.com/user-attachments/assets/52e2952a-d206-414c-9860-57323dbc3889" />
+
+
 
 
 3. Configure environment variables
@@ -121,11 +126,11 @@ The code follows a bottom-to-top layered structure:
    roslaunch px4 vsmpc_mavros_sitl.launch
    ```
    If it starts successfully, you will see Gazebo open and load the quadrotor and the pipeline model correctly.
+> [!NOTE]
+> On the first launch of the PX4 node, open the ground station `QGroundControl` and modify the parameter `THR_MDL_FAC` (0.8–1.0 should work) to make the thrust mapping closer to reality (see the Thrust Curve section in the official documentation https://docs.px4.io/v1.14/en/config_mc/   pid_tuning_guide_multicopter.html). Later, if you change the maximum thrust constraint, it’s best to tune this parameter again
 
-   PS: On the first launch of the PX4 node, open the ground station `QGroundControl` and modify the parameter `THR_MDL_FAC` (0.8–1.0 should work) to make the thrust mapping closer to reality (see the Thrust Curve section in the official documentation https://docs.px4.io/v1.14/en/config_mc/pid_tuning_guide_multicopter.html). Later, if you change the maximum thrust constraint, it’s best to tune this parameter again
+<img width="583" height="107" alt="5215d4c4bb79865c448269a138b15031" src="https://github.com/user-attachments/assets/5ef3dc1a-75d9-41d6-b94c-fb1b0f847bce" />
 
-   <img width="583" height="107" alt="5215d4c4bb79865c448269a138b15031" src="https://github.com/user-attachments/assets/5ef3dc1a-75d9-41d6-b94c-fb1b0f847bce" />
-
-If the simulation runs successfully, the UAV will autonomously fly along the pipeline in Gazebo, and a `result` window will appear showing the real-time image detection output.
+**If the simulation runs successfully, the UAV will autonomously fly along the pipeline in Gazebo, and a `result` window will appear showing the real-time image detection output.**
 
    
