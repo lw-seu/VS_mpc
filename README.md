@@ -5,6 +5,7 @@
 ![PX4](https://img.shields.io/badge/px4%20firmware-1.14.x-blue.svg)
 ![gazebo](https://img.shields.io/badge/gazebo%20classic-11.x.x-orange)
 [![eigen](https://img.shields.io/badge/eigen-3.4.x-green)](https://libeigen.gitlab.io/)
+[![OpenCV](https://img.shields.io/badge/opencv-4.2.0+-5C3EE8?&logo=opencv&logoColor=5C3EE8)](https://opencv.org/)
 ![c++](https://img.shields.io/badge/C++11-blue)
 
 ## Introduction
