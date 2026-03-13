@@ -27,6 +27,8 @@ MPC tool: ACADO toolkit is used, with qpoases as the solver. Installation refere
 
 Eigen: required for matrix operations, version 3.4.x. Installation reference: https://eigen.tuxfamily.org/index.php?title=Main_Page
 
+Opencv: required for vision detection, verion 4.2.0+. Installation reference: https://github.com/opencv/opencv?tab=readme-ov-file
+
 PX4 firmware: it is recommended to use version 1.14.4: https://github.com/PX4/PX4-Autopilot/tree/v1.14.4
 
 Dependencies required for simulation are detailed in the official PX4 documentation: https://docs.px4.io/v1.14/en/sim_gazebo_classic/
